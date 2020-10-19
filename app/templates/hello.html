@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+    window.root = {{ data | tojson | safe }};
+</script>
+
+<div class="row">
+
+    <div class="col-4">
+        <div class="row">
+            <div class="col-12 my-4 d-inline-flex justify-content-center">
+                <h1>Svelte + Flask</h1>
+            </div>
+            <div class="col-12 d-inline-flex justify-content-center">
+                <div id="svelte-app"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 p-4">
+        {% block slide %}{% endblock %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
